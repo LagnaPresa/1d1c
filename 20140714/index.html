@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="../common/default_1d1c.css" type="text/css">
+	<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript">
+	<!--
+	jQuery(function($) {
+
+		$("#thumbnail").click(function() {
+			$('#hidden_file_upload').click();
+			return false;
+		});
+
+		$("#hidden_file_upload").change(function() {
+			var files = this.files;
+			for (var i = 0; i < files.length; i++) {
+				var file = files[i];
+
+				if (file.type.match(/^image\//)) {
+					var thumb = $('#thumbnail').get(0);
+					thumb.file = file;
+
+					var reader = new FileReader();
+					reader.onload = (function(img) {
+						return function(e) {
+							img.src = e.target.result;
+							$('#thumbnail').css('width', '200px');
+							$('#thumbnail').css('height', 'auto');
+						};
+					})(thumb);
+
+					reader.readAsDataURL(file);
+				}
+			}
+		});
+	});
+	//-->
+	</script>
+	<title>thumbnail : 1d1c (2014-07-14 HTML5)</title>
+</head>	
+<body>
+	<h1>thumbnail : 1d1c (2014-07-14 HTML5)</h1>
+	<dl>
+		<dt>feature</dt>
+		<dd><ul>
+			<li>HTML5 File API (FileReader)</li>
+			<li>Customized input[type=file] UI</li>
+		</ul></dd>
+	</dl>
+	<p>
+		<img alt="" id="thumbnail" src="../common/camera.png" style="border: solid 1px;">
+		<input id="hidden_file_upload" type="file" name="img" style="display: none;">
+	</p>
+	<footer>
+		<p>1d1c <a href="http://n39i.net/1d1c">web</a> / <a href="https://github.com/LagnaPresa/1d1c">github</a></p>
+	</footer>
+</body>
+</html>
